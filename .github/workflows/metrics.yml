@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
           filename: metrics.svg
 
           base: header, activity, community, repositories, metadata
@@ -30,6 +30,7 @@ jobs:
 
           plugin_repositories: yes
           plugin_repositories_forks: false
+          plugin_repositories_featured: Heart-Attack-Prediction, upi-fraud-anomaly-detection, SimpLSQL, instagram-analytics
 
           plugin_stars: yes
           plugin_stars_limit: 4
